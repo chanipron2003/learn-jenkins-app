@@ -20,10 +20,12 @@ pipeline {
                 '''
             }
         }
-        stage('without Docker') {
+        stage('Test') {
             steps {
                 sh '''
-                    test -f build/index.html
+                    echo "without docker"
+                    touch "without-container.txt"
+                    touch "test.text"
                 '''
             }
         }
